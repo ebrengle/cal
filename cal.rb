@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 require_realtive 'lib/month'
+require_realtive 'lib/day'
 
 month = ARGV[0]
 year = ARGV[1]
