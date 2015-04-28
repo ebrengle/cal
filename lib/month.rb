@@ -1,4 +1,5 @@
 require_relative 'day'
+require_relative 'year'
 
 class Month
   attr_reader :month, :year
@@ -69,7 +70,7 @@ EOS
       length_of_month = 31
     elsif @month == 4 || @month == 6 || @month == 9 || @month == 11
       length_of_month = 30
-    elsif @month = 2
+    elsif @month == 2
       length_of_month = 28
     end
   end
