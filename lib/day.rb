@@ -1,25 +1,18 @@
 class Day
 
-  def self.dayOfTheWeek(month, day, year)
-  dayOfTheMonth = 1
-  m = month
-  Y = year
+  def self.day_of_the_week(month, day, year)
 
-  dayOfTheWeek = (dayOfTheMonth + (((@month + 1)26)/10).floor + Y + (Y/4).floor + (6(Y/100)).floor + (Y/400).floor)%7
+    day == 1
 
-  return dayOfTheWeek
+    if month == 1 or 2
+      month = month + 12
+      year = year - 1
+    end
+
+  dayOfTheWeek = (day + (((month + 1) * 26)/10).floor + year + (year/4).floor + (6 * (year/100)).floor + (year/400).floor)%7
 
   end
 
 end
 
 
-#Zeller's Basic Setup
-
-  # dayOfTheMonth = 1
-  # m = @month
-  # Y = @year
-
-  # dayOfTheWeek = (dayOfTheMonth + (((@month + 1)26)/10).floor + Y + (Y/4).floor + (6(Y/100)).floor + (Y/400).floor)%7
-
-  # return dayOfTheWeek
