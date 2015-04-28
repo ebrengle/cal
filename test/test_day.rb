@@ -3,25 +3,22 @@ require_relative '../lib/day'
 
 class TestDay < Minitest::Test
   def test_zellers_day_output
-    d = Day.dayOfTheWeek(1, 1, 2012)
-    assert_equal d, 1
-  end
-
-  def test_day_start_sunday
-    skip
-    m = Month.new(1, 2012)
-    assert_equal m.spaces, 1
+    day = Day.day_of_the_week(1, 2012)
+    assert_equal 1, day
   end
 
   def test_day_start_saturday
-    skip
-    m = Month.new(8, 2015)
-    assert_equal m.spaces, 16
+    day = Day.day_of_the_week(8, 2015)
+    assert_equal 0, day
+  end
+
+  def test_day_start_sunday
+    day = Day.day_of_the_week(1, 2012)
+    assert_equal 1, day
   end
 
   def test_day_start_wednesday
-    skip
-    m = Month.new(4, 2015)
-    assert_equal m.spaces, 10
+    day = Day.day_of_the_week(4, 2015)
+    assert_equal 4, day
   end
 end

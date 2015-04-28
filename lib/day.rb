@@ -1,15 +1,15 @@
 class Day
 
-  def self.day_of_the_week(month, day, year)
+  def self.day_of_the_week(month, year)
 
-    day == 1
+    day_date = 1
 
-    if month == 1 or 2
+    if month == 1 or month == 2
       month = month + 12
       year = year - 1
     end
 
-  dayOfTheWeek = (day + (((month + 1) * 26)/10).floor + year + (year/4).floor + (6 * (year/100)).floor + (year/400).floor)%7
+    day_of_the_week = (day_date + (((month + 1) * 26) / 10) + year + (year / 4) + (6 * ((year/100))) + (year/400))%7
 
   end
 
