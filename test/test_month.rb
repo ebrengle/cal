@@ -72,4 +72,21 @@ EOS
   end
 
 
+#Test Month Length
+
+  def test_month_length_Jan
+    m = Month.new(1, 2012)
+    assert_equal(31, m.length_of_month)
+  end
+
+  def test_month_length_Feb
+    m = Month.new(2, 2012)
+    assert_equal(28, m.length_of_month)
+  end
+
+  def test_month_length_June
+    m = Month.new(6, 2012)
+    assert_equal(30, m.length_of_month)
+  end
+
 end

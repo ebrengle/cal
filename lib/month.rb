@@ -39,9 +39,13 @@ EOS
      name[@month]
   end
 
+
+
   def week_day_names
     week_day_names = "Su Mo Tu We Th Fr Sa"
   end
+
+
 
   def spaces
     length = Day.day_of_the_week(@month, @year)
@@ -56,6 +60,18 @@ EOS
       0 => 19
     }
     spaces[length]
+  end
+
+
+
+  def length_of_month
+    if @month == 1 || @month == 3 || @month == 5 || @month == 7 || @month == 8 || @month == 10 || @month == 12
+      length_of_month = 31
+    elsif @month == 4 || @month == 6 || @month == 9 || @month == 11
+      length_of_month = 30
+    elsif @month = 2
+      length_of_month = 28
+    end
   end
 
 
