@@ -54,19 +54,21 @@ EOS
     assert_equal m.name, "December"
   end
 
-  def test_day_start_sunday
+
+#Test Spaces Return
+  def test_spaces_sunday
     m = Month.new(1, 2012)
-    assert_equal m.spaces, 1
+    assert_equal 1, m.spaces
   end
 
-  def test_day_start_saturday
+  def test_spaces_saturday
     m = Month.new(8, 2015)
-    assert_equal m.spaces, 16
+    assert_equal 19, m.spaces
   end
 
-  def test_day_start_wednesday
+  def test_spaces_wednesday
     m = Month.new(4, 2015)
-    assert_equal m.spaces, 10
+    assert_equal 10, m.spaces
   end
 
 

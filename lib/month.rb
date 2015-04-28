@@ -1,3 +1,5 @@
+require_relative 'day'
+
 class Month
   attr_reader :month, :year
 
@@ -42,15 +44,18 @@ EOS
   end
 
   def spaces
+    length = Day.day_of_the_week(@month, @year)
+
     spaces = {
-      0 => 1,
-      1 => 4,
-      2 => 7,
-      3 => 10,
-      4 => 13,
-      5 => 16,
-      6 => 19
+      1 => 1,
+      2 => 4,
+      3 => 7,
+      4 => 10,
+      5 => 13,
+      6 => 16,
+      0 => 19
     }
+    spaces[length]
   end
 
 
