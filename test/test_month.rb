@@ -94,4 +94,30 @@ EOS
     assert_equal(30, m.length_of_month)
   end
 
+  #Test Month Array
+  def test_month_array_Jan
+    m = Month.new(1, 2012)
+    expected = "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]"
+  assert_equal expected, m.create_month_string
+  end
+
+  def test_month_array_Feb2012
+    m = Month.new(2, 2012)
+    expected = "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]"
+  assert_equal expected, m.create_month_string
+  end
+
+  def test_month_array_Feb2013
+    m = Month.new(2, 2013)
+    expected = "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28]"
+  assert_equal expected, m.create_month_string
+  end
+
+  def test_month_array_June
+    m = Month.new(6, 2012)
+    expected = "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]"
+  assert_equal expected, m.create_month_string
+  end
+
+
 end

@@ -40,17 +40,12 @@ EOS
      name[@month]
   end
 
-
-
   def week_day_names
     week_day_names = "Su Mo Tu We Th Fr Sa"
   end
 
-
-
   def spaces
     length = Day.day_of_the_week(@month, @year)
-
     spaces = {
       1 => 1,
       2 => 4,
@@ -62,8 +57,6 @@ EOS
     }
     spaces[length]
   end
-
-
 
   def length_of_month
     leap_year = Year.leap_year(@month, @year)
@@ -82,5 +75,10 @@ EOS
     end
   end
 
+  def create_month_string
+    month = (1..length_of_month)
+    array_of_days = month.to_a
+    create_month_string = array_of_days.to_s
+  end
 
 end
