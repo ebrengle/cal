@@ -5,6 +5,7 @@ class TestCalIntegration < MiniTest::Test
 
 #Standard Error Message - No Arguments
   def test_no_arguments
+    skip
     output = `./cal.rb`
     expected = <<EOS
 Date not in acceptable format/range.
@@ -14,6 +15,7 @@ EOS
 
 #Month the Starts on a Sunday
   def test_month_that_starts_on_sunday
+    skip
     output = `./cal.rb 01 2012`
     expected = <<EOS
     January 2012
@@ -30,7 +32,8 @@ EOS
 
 #Test Regular Leap Year
   def test_regular_leap_year
-     output = `./cal.rb 02 2016`
+    skip
+    output = `./cal.rb 02 2016`
     expected = <<EOS
    February 2016
 Su Mo Tu We Th Fr Sa
@@ -46,7 +49,8 @@ EOS
 
 #Test Century Leap Year
   def test_century_leap_year
-     output = `./cal.rb 02 2000`
+    skip
+    output = `./cal.rb 02 2000`
     expected = <<EOS
       February 2000
 Su Mo Tu We Th Fr Sa
@@ -62,7 +66,8 @@ EOS
 
 #Test 400 Leap Year
   def test_400_leap_year
-     output = `./cal.rb 02 2400`
+    skip
+    output = `./cal.rb 02 2400`
     expected = <<EOS
    February 2400
 Su Mo Tu We Th Fr Sa
@@ -78,7 +83,8 @@ EOS
 
 #Test Jan 2015
   def test_january_2015
-     output = `./cal.rb 01 2015`
+    skip
+    output = `./cal.rb 01 2015`
     expected = <<EOS
     January 2015
 Su Mo Tu We Th Fr Sa
@@ -94,7 +100,8 @@ EOS
 
 #Test Feb 2015
   def test_february_2015
-     output = `./cal.rb 02 2015`
+    skip
+    output = `./cal.rb 02 2015`
     expected = <<EOS
    February 2015
 Su Mo Tu We Th Fr Sa
@@ -109,7 +116,8 @@ EOS
 
 #Test March 2015
   def test_march_2015
-     output = `./cal.rb 03 2015`
+    skip
+    output = `./cal.rb 03 2015`
     expected = <<EOS
      March 2015
 Su Mo Tu We Th Fr Sa
@@ -125,7 +133,8 @@ EOS
 
 #Test April 2015
   def test_april_2015
-     output = `./cal.rb 04 2015`
+    skip
+    output = `./cal.rb 04 2015`
     expected = <<EOS
      April 2015
 Su Mo Tu We Th Fr Sa
@@ -141,7 +150,8 @@ EOS
 
 #Test May 2015
   def test_may_2015
-     output = `./cal.rb 05 2015`
+    skip
+    output = `./cal.rb 05 2015`
     expected = <<EOS
       May 2015
 Su Mo Tu We Th Fr Sa
@@ -158,7 +168,8 @@ EOS
 
 #Test June 2015
   def test_june_2015
-     output = `./cal.rb 06 2015`
+    skip
+    output = `./cal.rb 06 2015`
     expected = <<EOS
      June 2015
 Su Mo Tu We Th Fr Sa
@@ -174,7 +185,8 @@ EOS
 
 #Test July 2015
   def test_july_2015
-     output = `./cal.rb 07 2015`
+    skip
+    output = `./cal.rb 07 2015`
     expected = <<EOS
      July 2015
 Su Mo Tu We Th Fr Sa
@@ -190,7 +202,8 @@ EOS
 
 #Test August 2015
   def test_august_2015
-     output = `./cal.rb 08 2015`
+    skip
+    output = `./cal.rb 08 2015`
     expected = <<EOS
     August 2015
 Su Mo Tu We Th Fr Sa
@@ -207,7 +220,8 @@ EOS
 
 #Test September 2015
   def test_september_2015
-     output = `./cal.rb 09 2015`
+    skip
+    output = `./cal.rb 09 2015`
     expected = <<EOS
    September 2015
 Su Mo Tu We Th Fr Sa
@@ -223,7 +237,8 @@ EOS
 
 #Test October 2015
   def test_october_2015
-     output = `./cal.rb 10 2015`
+    skip
+    output = `./cal.rb 10 2015`
     expected = <<EOS
     October 2015
 Su Mo Tu We Th Fr Sa
@@ -239,7 +254,8 @@ EOS
 
 #Test November 2015
   def test_november_2015
-     output = `./cal.rb 11 2015`
+    skip
+    output = `./cal.rb 11 2015`
     expected = <<EOS
    November 2015
 Su Mo Tu We Th Fr Sa
@@ -255,7 +271,8 @@ EOS
 
 #Test December 2015
   def test_december_2015
-     output = `./cal.rb 12 2015`
+    skip
+    output = `./cal.rb 12 2015`
     expected = <<EOS
    December 2015
 Su Mo Tu We Th Fr Sa
@@ -271,7 +288,8 @@ EOS
 
   #Min Date
   def test_min_date
-     output = `./cal.rb 01 1800`
+    skip
+    output = `./cal.rb 01 1800`
     expected = <<EOS
     January 1800
 Su Mo Tu We Th Fr Sa
@@ -287,7 +305,8 @@ EOS
 
     #Max Date
   def test_max_date
-     output = `./cal.rb 12 3000`
+    skip
+    output = `./cal.rb 12 3000`
     expected = <<EOS
    December 3000
 Su Mo Tu We Th Fr Sa
@@ -303,7 +322,8 @@ EOS
 
     #Date too early
   def test_date_too_early
-     output = `./cal.rb 12 1799`
+    skip
+    output = `./cal.rb 12 1799`
     expected = <<EOS
 Date not in acceptable format/range.
 EOS
@@ -312,7 +332,8 @@ EOS
 
     #Date too late
   def test_date_too_late
-     output = `./cal.rb 01 3001`
+    skip
+    output = `./cal.rb 01 3001`
     expected = <<EOS
 Date not in acceptable format/range.
 EOS
@@ -321,7 +342,8 @@ EOS
 
     #Written month error
   def test_date_written_month
-     output = `./cal.rb April 2000`
+    skip
+    output = `./cal.rb April 2000`
     expected = <<EOS
 Date not in acceptable format/range.
 EOS
@@ -330,7 +352,8 @@ EOS
 
     #Written year first
   def test_date_year_month
-     output = `./cal.rb 2000 04`
+    skip
+    output = `./cal.rb 2000 04`
     expected = <<EOS
 Date not in acceptable format/range.
 EOS
