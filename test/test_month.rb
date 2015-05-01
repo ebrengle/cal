@@ -58,17 +58,17 @@ EOS
 #Test Spaces Return
   def test_spaces_sunday
     m = Month.new(1, 2012)
-    assert_equal 1, m.spaces
+    assert_equal "Sunday", m.spaces
   end
 
   def test_spaces_saturday
     m = Month.new(8, 2015)
-    assert_equal 19, m.spaces
+    assert_equal "Saturday", m.spaces
   end
 
   def test_spaces_wednesday
     m = Month.new(4, 2015)
-    assert_equal 10, m.spaces
+    assert_equal "Wednesday", m.spaces
   end
 
 
@@ -94,28 +94,18 @@ EOS
     assert_equal(30, m.length_of_month)
   end
 
-  #Test Month Array
-  def test_month_array_Jan
-    m = Month.new(1, 2012)
-    expected = "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]"
+
+  #Test Adding Spaces on to front of month array
+  def test_month_array_Jan_2013_Tuesday
+    m = Month.new(1, 2013)
+    expected = "[  ,  , 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]"
   assert_equal expected, m.create_month_string
   end
 
-  def test_month_array_Feb2012
-    m = Month.new(2, 2012)
-    expected = "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]"
-  assert_equal expected, m.create_month_string
-  end
 
-  def test_month_array_Feb2013
-    m = Month.new(2, 2013)
-    expected = "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28]"
-  assert_equal expected, m.create_month_string
-  end
-
-  def test_month_array_June
+  def test_month_array_June_2013_Sat
     m = Month.new(6, 2012)
-    expected = "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]"
+    expected = "[  ,  ,  ,  ,  ,  , 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]"
   assert_equal expected, m.create_month_string
   end
 

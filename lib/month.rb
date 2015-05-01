@@ -47,15 +47,15 @@ EOS
   def spaces
     length = Day.day_of_the_week(@month, @year)
     spaces = {
-      1 => 1,
-      2 => 4,
-      3 => 7,
-      4 => 10,
-      5 => 13,
-      6 => 16,
-      0 => 19
+      1 => "Sunday",
+      2 => "Monday",
+      3 => "Tuesday",
+      4 => "Wednesday",
+      5 => "Thursday",
+      6 => "Friday",
+      0 => "Saturday"
     }
-    spaces[length]
+    @spaces = spaces[length]
   end
 
   def length_of_month
@@ -76,9 +76,30 @@ EOS
   end
 
   def create_month_string
+    spaces_for_month_to_start = Day.day_of_the_week(@month, @year)
     month = (1..length_of_month)
     array_of_days = month.to_a
-    create_month_string = array_of_days.to_s
+
+    case spaces_for_month_to_start
+    when 1
+      array_of_days
+    when 2
+      array_of_days.unshift("  ")
+    when 3
+      array_of_days.unshift("  ", "  ")
+    when 4
+      array_of_days.unshift("  ", "  ", "  ")
+    when 5
+      array_of_days.unshift("  ", "  ", "  ", "  ")
+    when 6
+      array_of_days.unshift("  ", "  ", "  ", "  ", "  ")
+    when 0
+      array_of_days.unshift("  ", "  ", "  ", "  ", "  ", "  ")
+    end
+
+    create_month_string = array_of_days
   end
+
+
 
 end
